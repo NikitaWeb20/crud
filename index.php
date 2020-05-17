@@ -28,8 +28,8 @@ $result = $sql->fetchAll();
     <td><?=$value['description'] ?></td>
     <td><?=$value['sum'] ?></td>
     <td>
-    <a href="<?= $value['id']; ?>"><img src="https://img.icons8.com/metro/26/000000/delete-sign.png"/></a>
-    <a href="<?= $value['id']; ?>"><img src="https://img.icons8.com/android/24/000000/pencil.png"/></a>
+    <a href="?delete=<?= $value['id']; ?>"><img src="https://img.icons8.com/metro/26/000000/delete-sign.png"/></a>
+    <a href="?edit=<?= $value['id']; ?>"><img src="https://img.icons8.com/android/24/000000/pencil.png"/></a>
     </td>
     <? } ?>
     </tr>
