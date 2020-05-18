@@ -14,6 +14,17 @@ $result = $sql->fetchAll();
     <title>Document</title>
 </head>
 <body>
+<form action="search.php" method="post">
+    <p>Поиск:</p>
+    <input type="text" name="search_query">
+    <select name="selected" id="">
+        <option value="selected_id">Номер</option>
+        <option value="selected_name">Имя</option>
+        <option value="selected_description">Описание</option>
+        <option value="selected_sum">Сумма</option>
+    </select>
+    <input type="submit" name="submit_search">
+</form> <br>
 <table>
     <tr>
         <th>№</th>
