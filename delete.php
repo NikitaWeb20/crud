@@ -19,7 +19,7 @@
 </head>
 <body>
     <form action="#" method="POST">
-        <p>Вы действительно хотите удалить запись?</p>
+        <p>Вы действительно хотите удалить <?=$_GET['name'];?>?</p>
         <input type="submit" value="Удалить" name="submit_delete">
     </form>
 </body>
