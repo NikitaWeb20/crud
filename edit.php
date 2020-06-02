@@ -1,9 +1,5 @@
 <?php
     require('config.php');
-    $sql = "SELECT * FROM `users` WHERE `id` = ?";
-    $sql = $pdo->prepare($sql);
-    $sql->execute([$_GET['edit']]);
-    $result = $sql->fetchAll();
     if (isset($_POST["submit_update"])) {
         $sql = "UPDATE `users` SET `name`= ?,`description`= ?,`sum`= ? WHERE `id` = ? ";
         $sql = $pdo->prepare($sql);
@@ -22,15 +18,13 @@
 </head>
 <body>
     <form action="#" method="post">
-    <?php foreach ($result as $value) { ?>
         <p>Имя:</p>
-        <input type="text" value='<?=$value['name']?>' name="new_name">
+        <input type="text" value='<?=$_GET['name']?>' name="new_name" pattern='[A-Za-zА-Яа-яЁё]+$'>
         <p>Описание:</p>
-        <input type="text" value='<?=$value['description']?>' name="new_description">
+        <input type="text" value='<?=$_GET['description']?>' name="new_description" pattern='[A-Za-zА-Яа-яЁё]+$'>
         <p>Сумма:</p>
-        <input type="text" value='<?=$value['sum']?>' name="new_sum">
+        <input type="number" value='<?=$_GET['sum']?>' name="new_sum">
         <input type="submit" name="submit_update">
-    <?php } ?>
     </form>
 </body>
 </html>

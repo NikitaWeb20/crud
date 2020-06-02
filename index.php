@@ -40,18 +40,18 @@ $result = $sql->fetchAll();
     <td><?=$value['sum'] ?></td>
     <td>
     <a href="delete.php?delete=<?= $value['id']; ?>&name=<?=$value['name']; ?>"><img src="https://img.icons8.com/metro/26/000000/delete-sign.png"/></a>
-    <a href="edit.php?edit=<?= $value['id']; ?>"><img src="https://img.icons8.com/android/24/000000/pencil.png"/></a>
+    <a href="edit.php?edit=<?= $value['id']; ?>&name=<?= $value['name']?>&description=<?= $value['description']?>&sum=<?= $value['sum']?>"><img src="https://img.icons8.com/android/24/000000/pencil.png"/></a>
     </td>
     <? } ?>
     </tr>
 </table>    
       <form action="func.php" method="GET">
         <p>Имя:</p>
-        <input type="text" name="name">
+        <input type="text" name="name" pattern='[A-Za-zА-Яа-яЁё]+$'>
         <p>Описание:</p>
-        <input type="text" name="description">
+        <input type="text" name="description" pattern='[A-Za-zА-Яа-яЁё]+$'>
         <p>Сумма заказа:</p>
-        <input type="text" name="sum">
+        <input type="number" name="sum">
         <input type="submit" name="submit_add">
       </form>
 </body>

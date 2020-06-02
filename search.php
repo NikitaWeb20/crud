@@ -61,8 +61,8 @@
     <td><?=$value['description'] ?></td>
     <td><?=$value['sum'] ?></td>
     <td>
-    <a href="delete.php?delete=<?= $value['id']; ?>"><img src="https://img.icons8.com/metro/26/000000/delete-sign.png"/></a>
-    <a href="edit.php?edit=<?= $value['id']; ?>"><img src="https://img.icons8.com/android/24/000000/pencil.png"/></a>
+    <a href="delete.php?delete=<?= $value['id']; ?>&name=<?=$value['name']; ?>"><img src="https://img.icons8.com/metro/26/000000/delete-sign.png"/></a>
+    <a href="edit.php?edit=<?= $value['id']; ?>&name=<?= $value['name']?>&description=<?= $value['description']?>&sum=<?= $value['sum']?>"><img src="https://img.icons8.com/android/24/000000/pencil.png"/></a>
     </td>
     <?php }; ?>
     </tr>
